@@ -1,0 +1,83 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f4ef;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content container */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 3em;
+  color: #005bbb;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Navigation links */
+a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: #d63384;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #b0256c;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1.05em;
+}
+
+/* Timeline iframe */
+iframe {
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+  border: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  main {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+}
