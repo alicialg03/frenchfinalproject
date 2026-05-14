@@ -20,7 +20,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Playfair Display", sans-serif
   line-height: 1.75;
   background:
     radial-gradient(circle at top left, rgba(0, 91, 187, 0.12), transparent 30%),
@@ -29,42 +29,62 @@ body {
   color: var(--text);
 }
 
-/* Main content container */
+/* Main page content — matches hero/nav style */
 main {
-  max-width: 980px;
-  margin: 50px auto;
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 24px;
-  box-shadow: 0 20px 45px var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 70px 80px;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
 
-/* Headings */
-h1 {
+/* Section headings */
+main h2 {
   font-family: "Playfair Display", Georgia, serif;
-  text-align: center;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  line-height: 1.1;
-  color: var(--blue);
-  margin: 0 0 18px;
+  font-size: 2.2rem;
+  color: #495f75;
+  margin-top: 0;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid #f4e7b2;
 }
 
-h2 {
-  font-size: 1.6rem;
-  color: var(--pink);
-  margin-top: 48px;
-  margin-bottom: 18px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid rgba(214, 51, 132, 0.25);
-}
-
-/* Paragraphs */
-p {
-  font-size: 1.08rem;
-  margin-bottom: 24px;
+/* Paragraph text */
+main p {
+  font-family: ""Inter"", Arial, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #222;
+  margin-bottom: 34px;
   text-align: left;
-  color: var(--text);
+}
+
+/* Optional: make important section titles feel more elegant */
+main h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.6rem;
+  color: #495f75;
+  margin-top: 45px;
+  margin-bottom: 14px;
+}
+
+/* Remove rounded-box feeling on mobile too */
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+    padding: 40px 24px;
+    border-radius: 0;
+  }
+
+  main h2 {
+    font-size: 1.7rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
 }
 
 /* Links / buttons */
@@ -81,29 +101,65 @@ a:hover {
   border-bottom-color: var(--pink);
 }
 
-/* Navigation */
+/* CLEAN MINIMALIST NAVIGATION BAR */
 nav {
+  background-color: #495f75;
+  padding: 18px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Navigation list layout */
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 25px auto 40px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
-  padding: 10px 15px;
-  background: #f4e7b2;
-  color: black;
-  border-radius: 5000px;
-  border-bottom: none;
-  font-size: 0.95rem;
-  box-shadow: 0 8px 18px rgba(0, 91, 187, 0.18);
+/* Remove bulky button styling */
+nav ul li {
+  margin: 0;
 }
 
-nav a:hover {
-  color: black;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(214, 51, 132, 0.25);
+/* Navigation text links */
+nav ul li a {
+  color: #f8f4ef;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  
+  font-family: "Lora", serif;
+  /* Alternatives:
+     "Playfair Display", serif;
+     "Montserrat", sans-serif;
+     "Lora", serif;
+  */
+
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  color: #f4e7b2;
+  border-bottom: 2px solid #f4e7b2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 /* Timeline iframe */
@@ -159,52 +215,9 @@ li {
     text-align: center;
   }
 }
-/* Navigation Bar */
-nav {
-  background-color: #495f75;
-  padding: 15px 0;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
 
-nav ul li {
-  margin: 0 20px;
-}
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #f1c40f;
-}
-
-/* Mobile Responsive Navbar */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}
 .hero {
   background-image: url("https://plus.unsplash.com/premium_photo-1670782711866-76a5ebb2b42c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFpdGl8ZW58MHx8MHx8fDA%3D");
   background-size: cover;
